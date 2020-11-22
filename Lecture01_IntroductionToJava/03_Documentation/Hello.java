@@ -5,7 +5,7 @@
 */
 
 /*
-Hello is a simple exmaple program which prints the classic message:
+Hello is a simple example program which prints the classic message:
 Hello, world
 */
 
