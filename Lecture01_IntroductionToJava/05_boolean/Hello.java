@@ -1,6 +1,6 @@
 /**
 @author     Firstname Lastname <a href="mailto:firstname.lastname@ucalgary.ca">firstname.lastname@ucalgary.ca</a>
-@version    1.2
+@version    1.4
 @since      1.0
 */
 
