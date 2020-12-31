@@ -14,23 +14,23 @@ public class Creature {
     */
     public static void main(String[] args) {
         Animal myPet = new Animal();
-        myPet.setanimalType("mouse");
+        myPet.setAnimalType("mouse");
         Animal myWildlife = new Animal();
-        myWildlife.setanimalType("deer");
+        myWildlife.setAnimalType("deer");
 
-        System.out.println("I have a pet " + myPet.animalType());
-        System.out.println("I see a " + myWildlife.animalType() + " outside");
+        System.out.println("I have a pet " + myPet.getAnimalType());
+        System.out.println("I see a " + myWildlife.getAnimalType() + " outside");
     }
 }
 
 class Animal {
         private String animalType;
 
-        public void setanimalType(String arg) {
+        public void setAnimalType(String arg) {
             animalType = arg;
         }
        
-        public String animalType() {
+        public String getAnimalType() {
             return animalType;
         }
 }
