@@ -1,6 +1,6 @@
-/n**
+/**
 @author     Firstname Lastname <a href="mailto:firstname.lastname@ucalgary.ca">firstname.lastname@ucalgary.ca</a> 
-@version    1.6
+@version    1.7
 @since      1.0
 */
 
@@ -18,13 +18,16 @@ public class Creature {
         Animal myWildlife = new Animal();
         myWildlife.setAnimalType("deer");
 
-        System.out.println("I have a pet " + myPet.getAnimalType());
-        System.out.println("I see a " + myWildlife.getAnimalType() + " outside");
+        System.out.print("I have a pet " + myPet.getAnimalType());
+        System.out.println(" belonging to kingdom " + myPet.getKingdom());
+        System.out.print("I see a member of kingdom " + myWildlife.getKingdom());
+        System.out.println(", namely a " + myWildlife.getAnimalType() + ", outside");
     }
 }
 
 class Animal {
         private String animalType;
+        private static String kingdom = "animalia";
 
         public void setAnimalType(String arg) {
             animalType = arg;
@@ -32,5 +35,9 @@ class Animal {
        
         public String getAnimalType() {
             return animalType;
+        }
+
+        public static String getKingdom() {
+            return kingdom;
         }
 }
