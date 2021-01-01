@@ -19,8 +19,8 @@ public class Creature {
         myWildlife.setAnimalType("deer");
 
         System.out.print("I have a pet " + myPet.getAnimalType());
-        System.out.println(" belonging to kingdom " + myPet.getKingdom());
-        System.out.print("I see a member of kingdom " + myWildlife.getKingdom());
+        System.out.println(" belonging to kingdom " + Animal.getKingdom());
+        System.out.print("I see a member of kingdom " + Animal.getKingdom());
         System.out.println(", namely a " + myWildlife.getAnimalType() + ", outside");
     }
 }
