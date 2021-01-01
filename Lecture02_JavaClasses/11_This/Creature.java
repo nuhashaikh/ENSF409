@@ -13,9 +13,11 @@ public class Creature {
     @param args Ignored command-line argument
     */
     public static void main(String[] args) {
-        Animal myPet = new Animal("mouse");
-        myPet.setAnimalTypeKingdom("deer", "animalia");
+        Animal myPet = new Animal();
+        myPet.setAnimalKingdom("animalia");
+        System.out.println(myPet.getAnimalType() + " is an " + myPet.getAnimalKingdom());
 
+        myPet.setAnimalTypeKingdom("deer", "animalia");
         System.out.println(myPet.getAnimalType() + " is an " + myPet.getAnimalKingdom());
     }
 }
@@ -26,7 +28,12 @@ class Animal {
 
         public Animal(String animalType)
         {
-            this.animalType = animalType;;
+            this.animalType = animalType;
+        }
+
+        public Animal()
+        {
+            this("mouse");
         }
 
         public void setAnimalTypeKingdom(String type, String kingdom)
