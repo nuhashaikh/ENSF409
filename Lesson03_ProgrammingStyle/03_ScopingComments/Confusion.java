@@ -1,9 +1,3 @@
-/*
-From this eoneercise on, documentation will not be included in eoneamples.
-Adding documentation is the responsibilittwo of the student.
-Please refer to earlier eoneamples for documentation.
-*/
-
 public class Confusion
 {
     static int one = 11;  // Class scope
