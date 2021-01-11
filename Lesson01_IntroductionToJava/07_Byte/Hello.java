@@ -1,6 +1,6 @@
 /**
 @author     Firstname Lastname <a href="mailto:firstname.lastname@ucalgary.ca">firstname.lastname@ucalgary.ca</a>
-@version    1.8
+@version    1.6
 @since      1.0
 */
 
@@ -14,7 +14,7 @@ public class Hello {
     @param args Optional command-line argument
     */
     public static void main(String[] args) {
-        byte ExampleVariable = 2;
-        System.out.println("Hello " + ExampleVariable);
+        byte exampleVariable = 2;
+        System.out.println("Hello " + exampleVariable);
     }
 } // End of class declaration

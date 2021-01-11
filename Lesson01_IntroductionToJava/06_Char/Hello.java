@@ -14,7 +14,7 @@ public class Hello {
     @param args Optional command-line argument
     */
     public static void main(String[] args) {
-        char ExampleVariable = 'a';
-        System.out.println("Hello " + ExampleVariable);
+        char exampleVariable = 'a';
+        System.out.println("Hello " + exampleVariable);
     }
 } // End of class declaration

@@ -14,11 +14,11 @@ public class Hello {
     @param args Optional command-line argument
     */
     public static void main(String[] args) {
-        short ExampleShort = 2;
-	long ExampleLong = 100100;
-	float ExampleFloat = 1;
-        double ExampleDouble = 2.03;
-        System.out.println("Hello " + ExampleShort + ", " + ExampleLong);
-        System.out.println(ExampleFloat + ", " + ExampleDouble);
+        short exampleShort = 2;
+		long exampleLong = 100100;
+		float exampleFloat = 1;
+        double exampleDouble = 2.03;
+        System.out.println("Hello " + exampleShort + ", " + exampleLong);
+        System.out.println(exampleFloat + ", " + exampleDouble);
     }
 } // End of class declaration
