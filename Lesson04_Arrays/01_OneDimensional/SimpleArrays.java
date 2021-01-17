@@ -59,7 +59,7 @@ public class SimpleArrays {
         }
 
         // Copy a subset of the char array into a new array
-        System.out.println("subsetCharArray contains values from indices 1, 2 & 3of originalCharArray: ");
+        System.out.println("subsetCharArray contains values from indices 1, 2 & 3 of originalCharArray: ");
         char[] subsetCharArray = Arrays.copyOfRange(originalCharArray, 1, 4);
         for (char tmpValue : subsetCharArray) {
             System.out.println(tmpValue);
