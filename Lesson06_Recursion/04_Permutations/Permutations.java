@@ -46,14 +46,21 @@ public class Permutations {
 		result = permutations(produce.length, 3);
 		System.out.println(result); // Expect 60
 
+		// Examples not provided by the exercise:
+
+		// Only select one item from the available items
 		result = permutations(produce.length, 1);
 		System.out.println(result); // Expect 5
 
+		// Select zero items from the available items
 		result = permutations(produce.length, 0);
 		System.out.println(result); // Expect 0
 
+		// Have zero items, request zero items
+		// Another possible answer would be that this throws an
+		// exception, because it makes no sense to request permutations
+		// out of a set of 0.
 		result = permutations(0,0);
 		System.out.println(result); // Expect 0
-
 	}
 }
