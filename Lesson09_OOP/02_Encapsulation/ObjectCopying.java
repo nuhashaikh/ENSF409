@@ -11,9 +11,10 @@ public class ObjectCopying {
         
 		System.out.println("Original Horse1");
         System.out.println("Name: " + horse1.getAnimalName());
-	String[] skills1 = horse1.getAnimalSkills();
-        System.out.println("Skills: " + Arrays.toString(skills1));
-        System.out.println("Rider: " + horse1.getRider().getRiderName());
+		String[] skills1 = horse1.getAnimalSkills();
+        //System.out.println("Skills: " + Arrays.toString(skills1));
+        horse1.printAnimalSkills();
+		System.out.println("Rider: " + horse1.getRider().getRiderName());
 		
         Animal horse2 = (Animal)horse1.clone();
         horse2.setAnimalName("Thunder");
@@ -25,12 +26,14 @@ public class ObjectCopying {
 	System.out.println("Horse1");
         System.out.println("Name: " + horse1.getAnimalName());
 	skills1 = horse1.getAnimalSkills();
-        System.out.println("Skills: " + Arrays.toString(skills1));
+        //System.out.println("Skills: " + Arrays.toString(skills1));
+        horse1.printAnimalSkills();		
         System.out.println("Rider: " + horse1.getRider().getRiderName());
 	System.out.println("Horse2");
         System.out.println("Name: " + horse2.getAnimalName());
 	String [] skills2 = horse2.getAnimalSkills();
-        System.out.println("Skills: " + Arrays.toString(skills2));
+        //System.out.println("Skills: " + Arrays.toString(skills2));
+        horse2.printAnimalSkills();		
         System.out.println("Rider: " + horse2.getRider().getRiderName());
 		
     }   
@@ -137,6 +140,26 @@ class Animal implements Cloneable{
 		}
 		return returnArray;
         }
+
+		
+        public void printAnimalSkills()
+        {
+            String[] skillArray = this.getAnimalSkills();
+            StringBuilder printSkills = new StringBuilder();
+            
+            for(int i = 0; i < skillArray.length; i++){
+                if(skillArray[i] != null){
+                    printSkills.append(skillArray[i] + ", ");
+                }
+            }
+            
+            if(printSkills.charAt(printSkills.length()-1) == ' '){
+                printSkills.delete(printSkills.length()-2, printSkills.length()-1);
+            }
+           
+            System.out.println(printSkills.toString());
+        }
+		
 
         private AnimalSkill[] getAnimalSkillsEnhanced()
 	{
