@@ -21,7 +21,7 @@ class Animal {
 	}
 }
 
-public class Bird extends Animal {
+class Bird extends Animal {
 	private int wingspan;
 
 	public Bird(int age) {
@@ -57,6 +57,9 @@ public class Bird extends Animal {
 	public void eat() {
 		System.out.println("Peck, peck, peck!");
 	}
+}
+
+public class MyExample {
 
 	public static void  main(String[] args) {
 		Bird cormorant = new Bird(3, 50);

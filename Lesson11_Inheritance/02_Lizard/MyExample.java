@@ -44,7 +44,7 @@ class Reptile extends Animal {
 }
 
 
-public class Lizard extends Reptile {
+class Lizard extends Reptile {
 	private int tailLength;
 	private int tongueLength;
 
@@ -85,6 +85,9 @@ public class Lizard extends Reptile {
 	public void run() {
 		System.out.println("🦎");
 	}
+}
+
+public class MyExample {
 
 	public static void  main(String[] args) {
 		Lizard chameleon = new Lizard("multi-hued", 2);

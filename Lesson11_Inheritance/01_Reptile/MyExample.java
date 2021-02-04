@@ -21,7 +21,7 @@ class Animal {
 	}
 }
 
-public class Reptile extends Animal {
+class Reptile extends Animal {
 	private String scales;
 
 	public Reptile(int age) {
@@ -41,8 +41,9 @@ public class Reptile extends Animal {
 	public void setScales(String scales) {
 		this.scales = scales;
 	}
+}
 
-
+public class MyExample {
 	public static void  main(String[] args) {
 		Reptile chameleon = new Reptile(2, "multi-hued");
 		Reptile gecko = new Reptile(1);
