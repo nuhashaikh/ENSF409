@@ -28,15 +28,19 @@ public class Bird extends Animal {
 		super(age);
 	}
 
+	// This is an example of calling the superclass's
+	// constructor without any arguments. The call to
+	// super is required to ensure the object is properly
+	// initialized.
+	public Bird() {
+		super();
+	}
+
 	public Bird(int age, int wingspan) {
 		super(age);
 		this.setWingspan(wingspan);
 	}
 
-	public Bird() {
-	}
-
-	
 	public int getWingspan() {
 		return this.wingspan;
 	}
@@ -49,15 +53,16 @@ public class Bird extends Animal {
 		System.out.println("Peck, peck, peck!");
 	}
 
-
 	public static void  main(String[] args) {
 		Bird cormorant = new Bird(3, 50);
 		Bird chicken = new Bird();
 		chicken.setWingspan(45);
+		chicken.setAge(3);
 
 		System.out.println("A cormorant is a bird "+
 			"with a " + cormorant.getWingspan() +
 			" centimeter wingspan.");
+
 		System.out.println("A chicken is a bird "+
 			"with a " + chicken.getWingspan() +
 			" centimeter wingspan. They peck "
