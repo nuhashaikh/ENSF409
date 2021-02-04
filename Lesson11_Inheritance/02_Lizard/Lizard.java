@@ -101,5 +101,6 @@ public class Lizard extends Reptile {
 			+ gecko.getTailLength() + " centimeters long,"+
 			" and a tongue of " +
 			gecko.getTongueLength() + " centimeter.");
+			gecko.eat();
 	}
 }
