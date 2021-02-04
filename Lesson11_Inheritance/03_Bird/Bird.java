@@ -34,6 +34,9 @@ public class Bird extends Animal {
 	// initialized. At least one constructor in the class
 	// must call invoke super(), and the remainder must use
 	// this() (or super()).
+	// Note that if we failed to provide a constructor
+	// Java would provide a default no argument one which
+	// invokes super().
 	public Bird() {
 		super();
 	}
