@@ -31,7 +31,8 @@ public class Bird extends Animal {
 	// This is an example of calling the superclass's
 	// constructor without any arguments. The call to
 	// super is required to ensure the object is properly
-	// initialized.
+	// initialized. Every constructor must invoke one of
+	// the superclass's constructors.
 	public Bird() {
 		super();
 	}
