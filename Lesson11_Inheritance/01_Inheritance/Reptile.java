@@ -45,16 +45,16 @@ public class Reptile extends Animal {
 
 	public static void  main(String[] args) {
 		Reptile chameleon = new Reptile(2, "multi-hued");
-		Reptile gekko = new Reptile(1);
+		Reptile gecko = new Reptile(1);
 
 		System.out.println("Chameleons are " +
 			chameleon.getScales() + " and " +
 			"this one is " + chameleon.getAge() +
 			" years old.");
 
-		System.out.println("This gekko is " +
-			gekko.getAge() + " years old and is" +
+		System.out.println("This gecko is " +
+			gecko.getAge() + " years old and is" +
 			" enjoying a meal.");
-		gekko.eat();
+		gecko.eat();
 	}
 }
