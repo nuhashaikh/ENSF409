@@ -57,5 +57,11 @@ public class MyExample {
 			gecko.getAge() + " years old and is" +
 			" enjoying a meal.");
 		gecko.eat();
+
+		// We can also still use the Animal class without
+		// using the Reptile class.
+		Animal horse = new Animal(7);
+		System.out.println("Our horse is " +
+			horse.getAge() + " years old.");
 	}
 }
