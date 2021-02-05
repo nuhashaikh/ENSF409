@@ -18,7 +18,7 @@ final class Trilobite extends Swimmer {
 		System.out.println("Method isExtinct is supplied by Trilobite");
 	}
 
-	public void breathe() {
+	final public void breathe() {
 		System.out.println("Method breathe is supplied by Trilobite");
 	}
 }
