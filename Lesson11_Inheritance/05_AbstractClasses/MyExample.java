@@ -13,7 +13,7 @@ abstract class Swimmer extends Animal {
 }
 
 
-class Trilobite extends Swimmer {
+final class Trilobite extends Swimmer {
 	public void isExtinct() {
 		System.out.println("Method isExtinct is supplied by Trilobite");
 	}
