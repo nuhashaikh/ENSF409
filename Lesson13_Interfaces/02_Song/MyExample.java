@@ -40,6 +40,11 @@ interface Recording extends PerformingArt, SoundStudio {
 	default double duration() {
 		return 5.06;
 	}
+
+	// Example of a contract method without a
+	// default 
+	String producer(); 
+	
 }
 
 class Melody {
@@ -67,6 +72,12 @@ class Song extends Melody implements Music, Recording {
 		// Use a super interface's method
 		return Recording.super.art();
 	}
+
+	// We must provide producer because of our
+	// contract with Recording
+	public String producer() {
+		return "Schulich productions";
+	}
 }
 
 
@@ -80,6 +91,7 @@ public class MyExample {
 		System.out.println("Key is " + mySong.KEY);
 		System.out.println("Tempo is " + mySong.tempo());
 		System.out.println("Studio is " + mySong.studio());
+		System.out.println("Producer is " + mySong.producer());
 		System.out.println("Duration is " + mySong.duration());
 		System.out.println("Speed is " + mySong.speed());
 	}
