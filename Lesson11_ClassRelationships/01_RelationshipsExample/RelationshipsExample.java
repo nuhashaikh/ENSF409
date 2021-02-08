@@ -11,20 +11,23 @@ public class RelationshipsExample{
     //Purchase a new bathtub.
     Bathtub newTub = new Bathtub("clawfoot","blue");
 
-    
     //Make renovations.
     newBuild.buildDeck("wood", 37.5, "2021");
     newBuild.renoBathroom("farmhouse", newTub);
     newBuild.updateRoof("asphalt", "2021");
     newBuild.replaceDoor("front", newDoor);
     
-    //Find tenant.
-    Tenant renterInfo = new Tenant("Jordan Upton","engineer","587-289-1111");
+    //Find tenant(s).
+    Tenant renter1 = new Tenant("Jordan Upton","engineer","587-289-1111");
+    Tenant renter2 = new Tenant("Jamie Upton","teacher","403-787-2222",renter1);
+    Tenant[] renterInfo = new Tenant[]{renter1, renter2};
     
     //Sign rental agreement.
-    RentalAgreement contract = new RentalAgreement("January 2021", "June 2020", 2500.00, renterInfo, newBuild);
+    RentalAgreement contract = new RentalAgreement("January 2021", "June 2021", 2500.00, renterInfo, newBuild);
     contract.rentalSummary();
-    }
+    RentalAgreementHardcopy legalCopy = new RentalAgreementHardcopy();
+    legalCopy.printAgreement(contract);
+    }    
 }
 
 class House {
@@ -85,6 +88,31 @@ class House {
     public String getOwner(){
         return this.owner;
     }
+
+    public String getAddress(){
+        return this.address;
+    }
+
+    public Roof getRoof(){
+        return this.houseRoof;
+    }
+
+    public Kitchen getKitchen(){
+        return this.houseKitchen;
+    }
+    public Bathroom getBathroom(){
+        return this.houseBathroom;
+    }
+    public Door getFrontDoor(){
+        return this.frontDoor;
+    }
+    public Door getBackDoor(){
+        return this.backDoor;
+    }
+    public Deck getDeck(){
+        return this.houseDeck;
+    }
+        
 }
 
 class Roof{
@@ -100,6 +128,10 @@ class Roof{
     String getRoofInstall(){
         return this.installationYear;
     }
+    
+    String getMaterial(){
+        return this.material;
+    }
 }
 
 class Deck{
@@ -114,6 +146,18 @@ class Deck{
         this.installationYear = installationYear;
         System.out.println("Enjoy your new deck!");
     }    
+    
+    public String getMaterial(){
+        return this.material;
+    }
+    
+    public double getArea(){
+        return this.area;
+    }
+    
+    public String getInstallYear(){
+        return this.installationYear;
+    }
 }
 
 class Door{
@@ -126,6 +170,14 @@ class Door{
     public Door(String material, String colour){
         this.material = material;
         this.colour = colour;
+    }
+    
+    public String getMaterial(){
+        return this.material;
+    }
+    
+    public String getColour(){
+        return this.colour;
     }
 }
 
@@ -141,6 +193,17 @@ class Kitchen{
         this.numAppliances = numAppliances;
     }
     
+    public double getArea(){
+        return this.area;
+    }
+    
+    public int getSeats(){
+        return this.numSeats;
+    }
+    
+    public int numAppliances(){
+        return this.numAppliances;
+    }
 }
 
 class Bathroom{
@@ -169,6 +232,18 @@ class Bathroom{
         this.sinkType = sinkType;
         System.out.println("New sink looks great!");        
     }
+    
+    public double getArea(){
+        return this.area;
+    }
+    
+    public String getSinkType(){
+        return this.sinkType;
+    }
+    
+    public Bathtub getTub(){
+        return this.tub;
+    }
 }
 
 class Bathtub{
@@ -180,6 +255,14 @@ class Bathtub{
         this.type = type;
         this.colour = colour;
     }
+    
+    public String getTubType(){
+        return this.type;
+    }
+    
+    public String getTubColour(){
+        return this.colour;
+    }
 }
 
 class Tenant{
@@ -187,45 +270,93 @@ class Tenant{
     private String name;
     private String occupation;
     private String phoneNumber;
+    private Tenant houseContact;
     
     public Tenant(String name, String occupation, String phoneNumber){
         this.name = name;
         this.occupation = occupation;
+        this.phoneNumber = phoneNumber;        
+    }
+
+    public Tenant(String name, String occupation, String phoneNumber, Tenant houseContact){
+        this.name = name;
+        this.occupation = occupation;
         this.phoneNumber = phoneNumber;
+        this.houseContact = houseContact;
     }
     
     public String getTenant(){
         return this.name;
     }
+    
+    public String getOccupation(){
+        return this.occupation;
+    }
+    
+    public String getPhoneNumber(){
+        return this.phoneNumber;
+    }
+    
+    public Tenant getHouseContact(){
+        return this.houseContact;
+    }
 }
 
 class RentalAgreement{
     
-    private String startString;
-    private String endString;
+    private String startDate;
+    private String endDate;
     private double monthlyCost;
-    private Tenant renter;
+    private Tenant[] renters;
     private House residence;
     
-    public RentalAgreement(String startString, String endString, double monthlyCost, Tenant renter, House residence){
-        this.startString = startString;
-        this.endString = endString;
+    public RentalAgreement(String startDate, String endDate, double monthlyCost, Tenant[] renters, House residence){
+        this.startDate = startDate;
+        this.endDate = endDate;
         this.monthlyCost = monthlyCost;
-        this.renter = renter;
+        this.renters = renters;
         this.residence = residence;
     }
     
     public void rentalSummary(){
         System.out.println("The details of the agreement are as follows: ");
         System.out.println("Agreement is between: " + getBothParties());
-        System.out.println("Begins: " + startString.toString() + " Ends: " + endString.toString());
-        System.out.println("Monthly cost: " + monthlyCost);
+        System.out.println("Begins: " + startDate.toString() + " Ends: " + endDate.toString());
+        System.out.println("Monthly cost: " + String.format("$%.2f", monthlyCost));
         System.out.println("Roof was last updated: " + residence.getRoofInstall());
         System.out.println();
     }
     
+    public String getStartDate(){
+        return this.startDate;
+    }
+    
+    public String getEndDate(){
+        return this.endDate;
+    }
+    
+    public double getMonthlyCost(){
+        return this.monthlyCost;
+    }
+    
+    public Tenant[] getRenters(){
+        return this.renters;
+    }
+    
+    public House getResidence(){
+        return this.residence;
+    }
+    
     private String getBothParties(){
-        return residence.getOwner() + " and " + renter.getTenant();
+        
+        StringBuilder allContractParties = new StringBuilder();
+        
+        allContractParties.append(residence.getOwner());
+        
+        for(int i = 0; i < renters.length; i++){
+            allContractParties.append(" and " + renters[i].getTenant());
+        }
+        return allContractParties.toString();
     }
 }
 
