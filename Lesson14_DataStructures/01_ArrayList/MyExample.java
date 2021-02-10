@@ -31,9 +31,13 @@ public class MyExample {
             System.out.println("All cakes were eaten.");
         }
 
-        // Convert to Array
-        myCake.add("Carrot");
+	// Sort
         myCake.add("Sponge");
+        myCake.add("Bundt");
+        myCake.add("Carrot");
+	Collections.sort(myCake);
+
+        // Convert to Array
         System.out.println("I got more cakes: ");
         Object[] cakes = myCake.toArray();
         for(int i=0; i < cakes.length; i++) {
