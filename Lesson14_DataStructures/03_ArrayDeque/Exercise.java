@@ -3,8 +3,8 @@ import java.util.*;
 public class Exercise {
     public static void main(String args[]) {
         // Create some temporary data structures to use later
-        Character[] tmpArray = {'C', 'Z'};
-        List<Character> tmpLetters = List.of('!', '8');
+        Character[] tmpArray = {'U', 'H'};
+        List<Character> tmpLetters = List.of('i', '!', 'Z');
         List<Character> tmpList = Arrays.asList(tmpArray);
 
         // Create new ArrayDeque from array
@@ -12,15 +12,15 @@ public class Exercise {
 
         // Add elements to the start and end of the list.
         queue.offerFirst('β'); // Start
-        queue.offer('H'); // End
-        queue.add('C'); // End
-        queue.offerLast('i'); // End
+        queue.offer('C'); // End
+        queue.add('H'); // End
+        queue.offerLast('H'); // End
         queue.addFirst('a'); // Start
         queue.addAll(tmpLetters); // End
         queue.addLast('ß'); // End
         queue.push('å'); // Start
         // Observe: ArrayDeque is very good at adding elements to the front & back
-
+	// Observe: ArrayDeque does not allow adding in the middle.
 
         // Alternate approach to using an iterator; reverse iteration
         System.out.println("...Reverse order");
@@ -51,6 +51,7 @@ public class Exercise {
         System.out.println(queue.removeFirst()); // Start
         System.out.println(queue.removeLast());  // End
         System.out.println(queue.remove('C')); // Specific value, returns boolean
+        System.out.println(queue.remove('H')); // Only one instance is removed
         System.out.println("...Remaining");
         System.out.println(queue);
     }
