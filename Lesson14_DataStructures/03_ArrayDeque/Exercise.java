@@ -19,6 +19,8 @@ public class Exercise {
         queue.addAll(tmpLetters); // End
         queue.addLast('ß'); // End
         queue.push('å'); // Start
+        // Observe: ArrayDeque is very good at adding elements to the front & back
+
 
         // Alternate approach to using an iterator; reverse iteration
         System.out.println("...Reverse order");
@@ -37,6 +39,7 @@ public class Exercise {
         System.out.println(queue.contains('U')); // Specific value, returns boolean
         System.out.println("...Non-destructive looks");
         System.out.println(queue);
+        // Observe: There is no way to inspect an element by index.
 
         // Remove characters one at a time. Print what remains.
         System.out.println("...Removing");
