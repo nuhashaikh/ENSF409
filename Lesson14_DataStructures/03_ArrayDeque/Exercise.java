@@ -13,7 +13,7 @@ public class Exercise {
         // Add elements to the start and end of the list.
         queue.offerFirst('β'); // Start
         queue.offer('H'); // End
-        queue.add('U'); // End
+        queue.add('C'); // End
         queue.offerLast('i'); // End
         queue.addFirst('a'); // Start
         queue.addAll(tmpLetters); // End
@@ -50,7 +50,7 @@ public class Exercise {
         System.out.println(queue.remove());   // Start
         System.out.println(queue.removeFirst()); // Start
         System.out.println(queue.removeLast());  // End
-        System.out.println(queue.remove('U')); // Specific value, returns boolean
+        System.out.println(queue.remove('C')); // Specific value, returns boolean
         System.out.println("...Remaining");
         System.out.println(queue);
     }
