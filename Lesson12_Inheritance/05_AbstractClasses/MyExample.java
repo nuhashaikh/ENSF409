@@ -4,7 +4,13 @@ abstract class Animal {
 	}
 }
 
-abstract class Swimmer extends Animal {
+abstract class Real extends Animal {
+	public void isReal() {	
+		System.out.println("Method isReal is supplied by Real");
+	}
+}
+
+abstract class Swimmer extends Real {
 	public void swim() {
 		System.out.println("Method swim is supplied by Swimmer");
 	}
@@ -25,10 +31,11 @@ final class Trilobite extends Swimmer {
 
 public class MyExample {
 	public static void  main(String[] args) {
-		var myTrilobite = new Trilobite();
+		Trilobite myTrilobite = new Trilobite();
 		myTrilobite.swim();
 		myTrilobite.eat();
 		myTrilobite.isExtinct();
+		myTrilobite.isReal();
 		myTrilobite.breathe();
 
 
