@@ -1,5 +1,5 @@
 class NotGenericClass {
-   <T>void sampleMethod(T[] array) {
+   public <T>void sampleMethod(T[] array) {
       for(int i=0; i<array.length; i++) {
          System.out.println(array[i]);
       }
