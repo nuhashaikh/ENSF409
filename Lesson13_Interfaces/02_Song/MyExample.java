@@ -7,6 +7,10 @@ interface PerformingArt {
 	default String speed() {
 		return "Slow";
 	}
+	
+	static String welcome(){
+		return "Welcome to the Performing Arts!";
+	}
 }
 
 interface SoundStudio {
@@ -94,5 +98,6 @@ public class MyExample {
 		System.out.println("Producer is " + mySong.producer());
 		System.out.println("Duration is " + mySong.duration());
 		System.out.println("Speed is " + mySong.speed());
+		System.out.println(PerformingArt.welcome());
 	}
 }
