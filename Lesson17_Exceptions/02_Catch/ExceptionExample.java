@@ -47,8 +47,10 @@ public class ExceptionExample {
 			return 200;
 		}
 
-		System.out.println("The try-catch block has ended with no exception caught.");
-		return answer;
+		finally {
+			System.out.println("The finally block was executed.");
+			return 300;
+		}
 	}
 }
 
