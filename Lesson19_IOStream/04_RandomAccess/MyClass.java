@@ -10,11 +10,11 @@ public class MyClass {
 		object.writeMe();
 		object.end();
 
-		object.start();
+		object.start('r');
 		int point = object.readMe();
 		object.end();
 
-		object.start();
+		object.start('r');
 		object.seekMe(point);
 		object.end();
 	}
@@ -31,11 +31,11 @@ public class MyClass {
                         }
 		}
 
-                catch (IOException e) {
-                        System.err.println("Could not read file: " + fn);
-                        this.end();
-                        System.exit(1);
-                }
+		catch (IOException e) {
+			System.err.println("Could not read file: " + fn);
+			this.end();
+			System.exit(1);
+		}
 
 		String str = String.valueOf(letters);
 		System.out.printf("String: %s%n", str);
@@ -74,6 +74,17 @@ public class MyClass {
 		catch (IOException e) {
 			System.err.println("Could not write to file: " + fn);
 			this.end();
+			System.exit(1);
+		}
+	}
+
+	public void start(char r) {
+		try {
+			file = new RandomAccessFile(fn, "r");
+		}
+
+		catch (IOException e) {
+			System.err.println("Could not open file: " + fn);	
 			System.exit(1);
 		}
 	}
