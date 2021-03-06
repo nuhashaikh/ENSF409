@@ -1,8 +1,6 @@
 import java.io.*;
 
 public class MyClass {
-	FileInputStream in = null;
-	FileOutputStream out = null;
 
 	public static void main(String[] args) {
 		var myself = new MyClass();
@@ -10,6 +8,8 @@ public class MyClass {
 	}
 
 	public void transfer() {
+		FileInputStream in = null;
+		FileOutputStream out = null;
 		String inName = "in.txt";
 		String outName = "out.txt";
 		try {
