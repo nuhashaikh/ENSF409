@@ -1,4 +1,3 @@
-//package edu.ucalgary.ensf409;
 import java.io.*;
 
 public class MyClass {
