@@ -14,8 +14,8 @@ public class MyClass {
 		String outName = "out.txt";
 		try {
 			// Open an inputstream and output stream
-			var in = new FileInputStream(inName);
-			var out = new FileOutputStream(outName);
+			in = new FileInputStream(inName);
+			out = new FileOutputStream(outName);
 			int c;
 
 			// Read from in until we reach the end of file (-1)
