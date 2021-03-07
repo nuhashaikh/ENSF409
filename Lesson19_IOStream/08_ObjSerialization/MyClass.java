@@ -44,6 +44,7 @@ public class MyClass {
 		// Provide more relevant catches in real code
 		catch (Exception e) {
 			System.err.println("Generic error handler");
+			e.printStackTrace();
 		}
 
 
@@ -73,17 +74,16 @@ public class MyClass {
 		}
 
 		try {
-			while (true) {
-				record = (BasicClass) input.readObject();
-				System.out.printf("String: %s, Number %d%n", 
-				  record.getString(), record.getNumber());
-			}
+			record = (BasicClass) input.readObject();
+			System.out.printf("String: %s, Number %d%n", 
+			  record.getString(), record.getNumber());
 		}
 	
 		// Keeping this short as it is not the focus of the code.
 		// Provide more relevant catches in real code
 		catch (Exception e) {
 			System.err.println("Generic error handler");
+			e.printStackTrace();
 		}
 
 		finally {
@@ -102,6 +102,7 @@ public class MyClass {
 
 
 class BasicClass implements Serializable {
+	static final long serialVersionUID = 3L;
 	private int number;
 	private String string;
 
