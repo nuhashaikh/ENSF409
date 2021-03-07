@@ -14,10 +14,10 @@ package edu.ucalgary.ensf409;
   */
 
   /* Constructor
-   * Accepts a String of a two-letter language code, dash, and two-letter country
-   * code, e.g., te-in and throws an IllegalArgumentException if the language and
-   * country code are not in the correct format. Language codes are ISO 639-1 and
-   * country codes are ISO 3166, but this method only checks the format of the String, 
+   * Accepts a String of a two-letter language code, dash, and two-letter region
+   * code, e.g., te-IN and throws an IllegalArgumentException if the language and
+   * region code are not in the correct format. Language codes are ISO 639-1 and
+   * region codes are ISO 3166, but this method only checks the format of the String, 
    * not the validity of the codes. It calls importTranslation().
   */
 
@@ -26,7 +26,7 @@ package edu.ucalgary.ensf409;
   */
 
   /* importFromText()
-   * Reads in from a the two-letter language code, dash, two-letter country code text 
+   * Reads in from a the two-letter language code, dash, two-letter region code text 
    * file, in the form of ab-xy.txt, and instantiates a TranslationText object with
    * the data. It can throw I/O exceptions, as well as a custom ArgFileNotFoundException. 
    * We expect the .txt file to be in a valid format. The file is expected to be in the same 
@@ -39,15 +39,15 @@ package edu.ucalgary.ensf409;
 
   /* serialize()
   * Creates a serialized object file of the TranslationText object, with the
-  * name format la-co.ser, where la is the two-letter language code and co is
-  * the two-letter country code. An example of a serialized object file can be
-  * found in the exercise directory as es-bo.ser
+  * name format la-CO.ser, where la is the two-letter language code and CO is
+  * the two-letter region code. An example of a serialized object file can be
+  * found in the exercise directory as es-BO.ser
   * I/O exceptions can be thrown.
   */
 
   /* deserialize()
    * Creates a TranslationText object from a .ser file. The files are named
-   * xx-yy.ser, where xx is the two-letter language code and yy is the two-
-   * letter country code. es-bo.ser is an example. It can throw I/O exceptions.
+   * xx-YY.ser, where xx is the two-letter language code and YY is the two-
+   * letter region code. es-bo.ser is an example. It can throw I/O exceptions.
   */
 
