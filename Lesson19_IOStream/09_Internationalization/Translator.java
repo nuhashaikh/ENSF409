@@ -30,9 +30,9 @@ package edu.ucalgary.ensf409;
    * file, in the form of ab-xy.txt, and instantiates a TranslationText object with
    * the data. It can throw I/O exceptions, as well as a custom ArgFileNotFoundException. 
    * We expect the .txt file to be in a valid format. The file is expected to be in the same 
-   * directory. The file en-us.txt is an example of a valid .txt file. It will always consist
-   * of the month names, one per line, followed by the day names, one per line, followed by
-   * the sentence containing formatting strings. This is the last line in the file. You
+   * directory. The files en-US.txt and el-GR.txt are examples of a valid .txt files. They will 
+   * always consist of the month names, one per line, followed by the day names, one per line, 
+   * followed by the sentence containing formatting strings. This is the last line in the file. You
    * cannot make any assumptions about what will appear on each line, only that each line
    * will contain only one data element, and that it will not contain an empty line.
   */
