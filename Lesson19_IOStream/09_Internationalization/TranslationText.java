@@ -18,12 +18,12 @@ package edu.ucalgary.ensf409;
   */
 
   /* getMonth()
-   * Accepts an integer 0-12 corresponding to an index in the months array,
+   * Accepts an integer 0-11 corresponding to an index in the months array,
    * and returns the value at that index.
   */
 
   /* getDay()
-   * Accepts an integer 0-31 corresponding to an index in the day array,
+   * Accepts an integer 0-30 corresponding to an index in the day array,
    * and returns the value at that index.
   */
 
