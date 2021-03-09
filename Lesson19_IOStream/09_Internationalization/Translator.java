@@ -27,7 +27,7 @@ package edu.ucalgary.ensf409;
 
   /* importFromText()
    * Reads in from a the two-letter language code, dash, two-letter region code text 
-   * file, in the form of ab-xy.txt, and instantiates a TranslationText object with
+   * file, in the form of ab-XY.txt, and instantiates a TranslationText object with
    * the data. It can throw I/O exceptions, as well as a custom ArgFileNotFoundException. 
    * We expect the .txt file to be in a valid format. The file is expected to be in the same 
    * directory. The files en-US.txt and el-GR.txt are examples of a valid .txt files. They will 
