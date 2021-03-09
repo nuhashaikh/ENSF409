@@ -6,7 +6,7 @@ package edu.ucalgary.ensf409;
 */
 
   /* getSentence()
-   * Getter method, returns String[]
+   * Getter method, returns String
   */
 
   /* getMonths()
