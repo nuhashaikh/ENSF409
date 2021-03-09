@@ -11,6 +11,10 @@ package edu.ucalgary.ensf409;
    * containing formatting uses numbered arguments - this is because some languages
    * will put the words in the sentence in a different order, but the translate()
    * method must be able to work without knowledge of the language structure.
+   * Note: You do not have to check if a day is valid for a particular month/year;
+   * February 31 or February 29, 2021 can both be accepted, but out of range values
+   * e.g., month 15 day 40, are not valid and should be handled with an 
+   * IllegalArgumentException.
   */
 
   /* Constructor
