@@ -14,7 +14,7 @@ package edu.ucalgary.ensf409;
    * Note: You do not have to check if a day is valid for a particular month/year;
    * February 31 or February 29, 2021 can both be accepted, but out of range values
    * e.g., month 15 day 40, are not valid and should be handled with an 
-   * IllegalArgumentException.
+   * IllegalArgumentException. 
   */
 
   /* Constructor
@@ -27,6 +27,7 @@ package edu.ucalgary.ensf409;
 
   /* importTranslation()
    * Calls deserialize() if the appropriate file exists, otherwise calls importFromText().
+   * No arguments. Returns void.
   */
 
   /* importFromText()
@@ -39,6 +40,7 @@ package edu.ucalgary.ensf409;
    * followed by the sentence containing formatting strings. This is the last line in the file. You
    * cannot make any assumptions about what will appear on each line, only that each line
    * will contain only one data element, and that it will not contain an empty line.
+   * No arguments. Returns void.
   */
 
   /* serialize()
@@ -47,11 +49,13 @@ package edu.ucalgary.ensf409;
   * the two-letter region code. An example of a serialized object file can be
   * found in the exercise directory as es-BO.ser
   * I/O exceptions can be thrown.
+   * No arguments. Returns void.
   */
 
   /* deserialize()
    * Creates a TranslationText object from a .ser file. The files are named
    * xx-YY.ser, where xx is the two-letter language code and YY is the two-
    * letter region code. es-bo.ser is an example. It can throw I/O exceptions.
+   * No arguments. Returns void.
   */
 
