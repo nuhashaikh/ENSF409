@@ -56,7 +56,7 @@ package edu.ucalgary.ensf409;
   /* deserialize()
    * Creates a TranslationText object from a .ser file. The files are named
    * xx-YY.ser, where xx is the two-letter language code and YY is the two-
-   * letter region code. es-bo.ser is an example. It can throw I/O exceptions.
+   * letter region code. es-BO.ser is an example. It can throw I/O exceptions.
    * No arguments. Returns void.
   */
 
