@@ -1,7 +1,7 @@
 package edu.ucalgary.ensf409;
 
   /* getTranslation()
-   * getter method
+   * getter method returning a stored TranslationText object.
   */
 
   /* translate()
