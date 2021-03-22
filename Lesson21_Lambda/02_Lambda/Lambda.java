@@ -10,7 +10,11 @@ public class Lambda {
 		myList.add("text.");
 
 		// Example Lambda expression
+		// Note: it is not necessary to declare v as type String
 		myList.forEach( (String v) -> {System.out.println(v);} );
+
+		// Alternative
+		// myList.forEach( (String v) -> System.out.println(v) );
 	}
 
 }

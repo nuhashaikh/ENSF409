@@ -10,6 +10,9 @@ public class Calc {
 	public static void main(String[] args) {
 		MathWithInts multiplication = (a, b) -> a * b;
 
+ 		// Alternative:
+		//  MathWithInts multiplication = (a, b) -> {return a * b;};
+
 		Calc myApp = new Calc();
 		System.out.println("2 * 10 = " +
 			myApp.twoDigitOp(2, 10, multiplication));	
