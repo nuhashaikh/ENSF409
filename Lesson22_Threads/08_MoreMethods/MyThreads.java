@@ -18,19 +18,14 @@ public class MyThreads {
         // Modify the name and priority of one thread, then output its information.
         System.out.println("\nRevised name, revised priority");
         t.setName("Alberta");
+        // Defined properties for priority are: NORM_PRIORITY, MIN_PRIORITY, and
+        // MAX_PRIORITY.
         t.setPriority(Thread.NORM_PRIORITY +2);
         printInfo(t, "t");
 
-        // Set threads with the other two priority properties
-        System.out.println("\nRevised priority");
-        t.setPriority(Thread.MIN_PRIORITY);
-        printInfo(t, "t");
-        t2.setPriority(Thread.MAX_PRIORITY);
+        // Set thread using an int from 1-10
+        t2.setPriority(4);
         printInfo(t2, "t2");
- 
-        // Set the thread with a priority using an int from 1-10
-        t.setPriority(4);
-        printInfo(t, "t");
     }
 
     public static void printInfo (Thread t, String varName) {
@@ -48,8 +43,7 @@ class OneThread implements Runnable {
         System.out.println("(run) Thread " + Thread.currentThread().getName() + " has started.");
 
         try {
-            // Use a very short sleep so that we can see different values for isAlive()
-            Thread.sleep(1);
+            Thread.sleep(10);
         }
         catch (InterruptedException e) {
                 System.out.println("(run) Thread " + Thread.currentThread().getName() + " was interrupted.");
