@@ -43,7 +43,11 @@ class WaitForever implements Runnable {
              try {
                  // The current thread, WaitForever, will now wait indefinitely,
                  // or until notified by WaitingOnThisThread, when it will wake up.
+                 // Using an alternate version of this, we can set an optional timer,
+                 // and we will return to this thread at the end of the time or when we
+                 // are notified, whichever comes first.
                  t.wait();
+                 // t.wait(10);
              }
              catch (InterruptedException e) {
                  System.out.println("WaitForever was interrupted with an exception.");
