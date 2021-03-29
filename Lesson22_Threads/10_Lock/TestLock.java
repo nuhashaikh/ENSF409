@@ -52,19 +52,19 @@ class MethodTwoJob implements Runnable {
     }
 }
 
-// Class which has two methods, and two different locks. The displayLock 
+// Class which has two methods, and two different locks. The oneLock 
 // ensures that when a lock is acquired on the testResource object, the
 // methodOne method has to wait for the lock to be released. But the
 // methodTwo method does not need to wait for methodOne because it
 // uses a different lock.
 class SharedResource {
-    private final Lock displayLock = new ReentrantLock();
-    private final Lock readLock = new ReentrantLock();
+    private final Lock oneLock = new ReentrantLock();
+    private final Lock twoLock = new ReentrantLock();
 
     public void methodOne(String doc) {
         String name = Thread.currentThread().getName();
-        final Lock dLock = this.displayLock;
-        dLock.lock();
+        final Lock oLock = this.oneLock;
+        oLock.lock();
         try {
            Random rand = new Random();
            int delay = rand.nextInt(2500); 
@@ -77,14 +77,14 @@ class SharedResource {
         }
         finally {
             System.out.printf("(%s) methodOne completed: %s%n", name, doc);
-            dLock.unlock();
+            oLock.unlock();
         }
     }
 
     public void methodTwo(String doc) {
         String name = Thread.currentThread().getName();
-        final Lock rLock = this.readLock;
-        rLock.lock();
+        final Lock tLock = this.twoLock;
+        tLock.lock();
         try {
            Random rand = new Random();
            int delay = rand.nextInt(2500); 
@@ -97,7 +97,7 @@ class SharedResource {
         }
         finally {
             System.out.printf("(%s) methodTwo completed: %s%n", name, doc);
-            rLock.unlock();
+            tLock.unlock();
         }
     }
 }
