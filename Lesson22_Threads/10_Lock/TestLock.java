@@ -63,8 +63,7 @@ class SharedResource {
 
     public void methodOne(String doc) {
         String name = Thread.currentThread().getName();
-        final Lock oLock = this.oneLock;
-        oLock.lock();
+        oneLock.lock();
         try {
            Random rand = new Random();
            int delay = rand.nextInt(2500); 
@@ -77,14 +76,13 @@ class SharedResource {
         }
         finally {
             System.out.printf("(%s) methodOne completed: %s%n", name, doc);
-            oLock.unlock();
+            oneLock.unlock();
         }
     }
 
     public void methodTwo(String doc) {
         String name = Thread.currentThread().getName();
-        final Lock tLock = this.twoLock;
-        tLock.lock();
+        twoLock.lock();
         try {
            Random rand = new Random();
            int delay = rand.nextInt(2500); 
@@ -97,7 +95,7 @@ class SharedResource {
         }
         finally {
             System.out.printf("(%s) methodTwo completed: %s%n", name, doc);
-            tLock.unlock();
+            twoLock.unlock();
         }
     }
 }
