@@ -45,9 +45,9 @@ class MyThread extends Thread {
 
     public void run() {
         double value = 100.00;
-        double withdrawn = 0;
 
         for (int i=0; i < 5; i++) {
+            double withdrawn = 0;
             if (account.balance() >= value) {
                 withdrawn = account.withdraw(value);
             }
