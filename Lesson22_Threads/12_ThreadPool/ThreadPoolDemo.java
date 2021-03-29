@@ -7,7 +7,7 @@ class ThreadPoolDemo {
 	public static void main (String [] args) throws InterruptedException {
 		ExecutorService executor = Executors.newFixedThreadPool(5);
 		
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 12; i++) {
 			executor.submit(new MyThreadInThreadPool(i));
 		}
 		
