@@ -1,9 +1,4 @@
-import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 public class MyThreadInThreadPool implements Runnable{
-	
 	private int id;
 	
 	public MyThreadInThreadPool (int id) {
@@ -20,6 +15,5 @@ public class MyThreadInThreadPool implements Runnable{
                 catch (InterruptedException e) {}
 		System.out.println("Completed: " + id);
 	}
-
 }
 

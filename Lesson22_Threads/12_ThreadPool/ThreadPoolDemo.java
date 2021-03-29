@@ -8,7 +8,7 @@ class ThreadPoolDemo {
 		ExecutorService executor = Executors.newFixedThreadPool(5);
 		
 		for (int i = 0; i < 5; i++) {
-			executor.submit (new MyThreadInThreadPool (i));
+			executor.submit(new MyThreadInThreadPool(i));
 		}
 		
 		executor.shutdown();
