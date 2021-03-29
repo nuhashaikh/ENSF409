@@ -11,9 +11,12 @@ class ThreadPoolDemo {
 			executor.submit(new MyThreadInThreadPool(i));
 		}
 		
+              
 		executor.shutdown();
 		System.out.println("All tasks submitted.");
 		executor.awaitTermination(1,  TimeUnit.HOURS);
+                // If we want to terminate tasks in progress:
+                // executor.shutdownNow();
 	}
 }
 
