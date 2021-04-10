@@ -1,35 +1,38 @@
-
-package edu.ucalgary.ensf409;
+//package edu.ucalgary.ensf409;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
-import javax.swing.*;
+import java.awt.EventQueue;//concurrency 
+import javax.swing.*;//for all components 
 import java.awt.event.*;
 import java.awt.FlowLayout;
 
-public class GUIPetID extends JFrame implements ActionListener, MouseListener{
-
+public class GUIPetID extends JFrame implements ActionListener, MouseListener{//extends JFrame which means GUIPetID 
+                                                                            //is a frame itself
+    // All are frame variables 
+    //taking in input from user
     private String firstName;
     private String lastName;
     private String petName;
     private int birthYear;
     
+   //some labels
     private JLabel instructions;
     private JLabel fnLabel;
     private JLabel lnLabel;
     private JLabel petLabel;
     private JLabel yearLabel;
-    
+    //text fields
     private JTextField fnInput;
     private JTextField lnInput;
     private JTextField petInput;
     private JTextField yearInput;
     
     public GUIPetID(){
-        super("Create a PetID");
+        super("Create a PetID"); //as extends JFrame, can pass in title of JFrame, inheritance, calling constructor
+                                 // of parent class
         setupGUI();
         setSize(500,300);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);        
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //has many other functionalities other than .EXIT_ON_CLOSE 
         
     }
     
@@ -41,39 +44,45 @@ public class GUIPetID extends JFrame implements ActionListener, MouseListener{
         petLabel = new JLabel("Pet Name:");
         yearLabel = new JLabel("Pet Birth Year:");
         
+        //example data
+        //text boxes that user will enter data inside
         fnInput = new JTextField("e.g. Dorothy", 15);
         lnInput = new JTextField("e.g. Gale", 15);
         petInput = new JTextField("e.g. Toto", 15);
         yearInput = new JTextField("e.g. 2000", 15);    
         
+        //add MouseListener to each of these TextFields
         fnInput.addMouseListener(this);
         lnInput.addMouseListener(this);
         petInput.addMouseListener(this);
         yearInput.addMouseListener(this);
         
-        JButton submitInfo = new JButton("Submit");
-        submitInfo.addActionListener(this);
+        JButton submitInfo = new JButton("Submit"); //submit button
+        submitInfo.addActionListener(this);//adding action listener to the Submit button
         
         JPanel headerPanel = new JPanel();
-        headerPanel.setLayout(new FlowLayout());
+        headerPanel.setLayout(new FlowLayout());//top 
         
         JPanel clientPanel = new JPanel();
-        clientPanel.setLayout(new FlowLayout());
+        clientPanel.setLayout(new FlowLayout());//middle
 
         JPanel submitPanel = new JPanel();
-        submitPanel.setLayout(new FlowLayout());
+        submitPanel.setLayout(new FlowLayout());//bottom
         
-        headerPanel.add(instructions);
-        clientPanel.add(fnLabel);
-        clientPanel.add(fnInput);
-        clientPanel.add(lnLabel);
-        clientPanel.add(lnInput);
-        clientPanel.add(petLabel);
-        clientPanel.add(petInput);
-        clientPanel.add(yearLabel);
-        clientPanel.add(yearInput);
-        submitPanel.add(submitInfo);
+        //have to go in this order because of FlowLayout of panels
+        headerPanel.add(instructions);//label
+        clientPanel.add(fnLabel);//label
+        clientPanel.add(fnInput);//text field
+        clientPanel.add(lnLabel);//label
+        clientPanel.add(lnInput);//text field
+        clientPanel.add(petLabel);//label
+        clientPanel.add(petInput);//text field
+        clientPanel.add(yearLabel);//label
+        clientPanel.add(yearInput);//text field
+        submitPanel.add(submitInfo); //button
         
+        //panels needed to added to the frame
+        //frame itself will use BorderLayout.
         this.add(headerPanel, BorderLayout.NORTH);
         this.add(clientPanel, BorderLayout.CENTER);
         this.add(submitPanel, BorderLayout.PAGE_END);
@@ -94,32 +103,35 @@ public class GUIPetID extends JFrame implements ActionListener, MouseListener{
     public void mouseClicked(MouseEvent event){
         
         if(event.getSource().equals(fnInput))
-            fnInput.setText("");
+            fnInput.setText("");//override the current text if textField was clicked
 
         if(event.getSource().equals(lnInput))
-            lnInput.setText("");
+            lnInput.setText("");//override the current text if textField was clicked
+
 
         if(event.getSource().equals(petInput))
-            petInput.setText("");
+            petInput.setText("");//override the current text if textField was clicked
+
 
         if(event.getSource().equals(yearInput))
-            yearInput.setText("");
+            yearInput.setText("");//override the current text if textField was clicked
+
                 
     }
     
-    public void mouseEntered(MouseEvent event){
+    public void mouseEntered(MouseEvent event){//do nothing
         
     }
 
-    public void mouseExited(MouseEvent event){
+    public void mouseExited(MouseEvent event){//do nothing
         
     }
 
     public void mousePressed(MouseEvent event){
-        
+        //do nothing
     }
 
-    public void mouseReleased(MouseEvent event){
+    public void mouseReleased(MouseEvent event){//do nothing
         
     }
     
@@ -161,7 +173,7 @@ public class GUIPetID extends JFrame implements ActionListener, MouseListener{
     
     public static void main(String[] args) {
         
-        EventQueue.invokeLater(() -> {
+        EventQueue.invokeLater(() -> {// EventQueue for concurrency issues, lambda expression 
             new GUIPetID().setVisible(true);        
         });
     }
